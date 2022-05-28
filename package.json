@@ -1,8 +1,8 @@
 {
-  "name": "webpack-userscript-template",
+  "name": "netangels-userscript",
   "version": "0.0.1",
-  "description": "webpack-userscript-template",
-  "homepage": "https://crashmax-dev.github.io/webpack-userscript-template/",
+  "description": "netangels-userscript",
+  "homepage": "https://crashmax-dev.github.io/netangels-userscript/",
   "scripts": {
     "dev": "webpack server --node-env development",
     "build": "webpack --node-env production --progress",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crashmax-dev/webpack-userscript-template.git"
+    "url": "git+https://github.com/crashmax-dev/netangels-userscript.git"
   },
   "dependencies": {
     "redom": "^3.27.1"

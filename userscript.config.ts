@@ -30,6 +30,6 @@ export const UserScriptConfig: IWebpackUserScript = {
     author: pkg.author.name,
     updateURL: `${pkg.homepage}${pkg.name}.meta.js`,
     downloadURL: `${pkg.homepage}${pkg.name}.user.js`,
-    include: '/^(http|https)://(example.com|example.org|example.edu).*$/'
+    include: '/^(http|https)://(panel.netangels.ru).*$/'
   }
 }
