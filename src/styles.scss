@@ -6,3 +6,7 @@
 .spoiler:hover {
   filter: none;
 }
+
+.virtualhost_dbms-access__info {
+  @extend .spoiler
+}

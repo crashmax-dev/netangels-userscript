@@ -20,30 +20,16 @@ window.addEventListener('load', () => {
   observe()
 })
 
-function createButton(directive: Element): void {
-  if (directive.classList.contains('x')) return
-  directive.classList.add('x')
-
-  const span = directive.querySelector('span')!
-  const [, key, value] = span.textContent!.match(/(.+)=(.+)/)!
-  const spoiler = el('span', { className: 'spoiler' }, value)
-  span.innerHTML = `${key}=${spoiler.outerHTML}`
-}
-
 function addDirectivesSpoiler(directives: NodeListOf<Element>): void {
   for (const directive of directives) {
-    createButton(directive)
+    if (directive.querySelector('spoiler')) return
+
+    const span = directive.querySelector('span')!
+    const [, key, value] = span.textContent!.match(/(.+)=(.+)/)!
+    const spoiler = el('span', { className: 'spoiler' }, value)
+    span.innerHTML = `${key}=${spoiler.outerHTML}`
   }
 }
-
-// function addDatabaseSpoiler() {
-//   const dbms = document.querySelector('.virtualhost_dbms-access__info')
-//   if (dbms) {
-//     if (!dbms.classList.contains('spoiler')) {
-//       dbms.classList.add('spoiler')
-//     }
-//   }
-// }
 
 function wrapperObserver() {
   const observer = new MutationObserver((mutations) => {
