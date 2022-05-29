@@ -1,8 +1,16 @@
-import { el } from 'redom'
+import { wrapperObserver } from './observer'
+import { addDirectivesSpoiler } from './spoilers'
 import './styles.scss'
 
 window.addEventListener('load', () => {
-  const observe = wrapperObserver()
+  const observe = wrapperObserver((mutation) => {
+    const node = mutation.target as HTMLElement
+    const directives = node.querySelectorAll('.vh_directive')
+    if (directives) {
+      addDirectivesSpoiler(directives)
+    }
+  })
+
   const { history } = window
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { pushState, replaceState } = history
@@ -19,36 +27,3 @@ window.addEventListener('load', () => {
 
   observe()
 })
-
-function addDirectivesSpoiler(directives: NodeListOf<Element>): void {
-  for (const directive of directives) {
-    if (directive.querySelector('spoiler')) return
-
-    const span = directive.querySelector('span')!
-    const [, key, value] = span.textContent!.match(/(.+)=(.+)/)!
-    const spoiler = el('span', { className: 'spoiler' }, value)
-    span.innerHTML = `${key}=${spoiler.outerHTML}`
-  }
-}
-
-function wrapperObserver() {
-  const observer = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {
-      const node = mutation.target as HTMLElement
-      const directives = node.querySelectorAll('.vh_directive')
-      if (directives) {
-        addDirectivesSpoiler(directives)
-      }
-    }
-  })
-
-  return () => {
-    const app = document.querySelector('#app')
-    if (app) {
-      observer.observe(app, {
-        childList: true,
-        subtree: true
-      })
-    }
-  }
-}
