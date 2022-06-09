@@ -1,13 +1,13 @@
 import { wrapperObserver } from './observer'
-import { addDirectivesSpoiler } from './spoilers'
+import { addSpoiler } from './spoiler'
 import './styles.scss'
 
 window.addEventListener('load', () => {
-  const observe = wrapperObserver((mutation) => {
-    const node = mutation.target as HTMLElement
+  const { connect, disconnect } = wrapperObserver('#app', (node) => {
     const directives = node.querySelectorAll('.vh_directive')
-    if (directives) {
-      addDirectivesSpoiler(directives)
+    if (directives.length) {
+      addSpoiler(directives)
+      disconnect()
     }
   })
 
@@ -17,13 +17,13 @@ window.addEventListener('load', () => {
 
   history.pushState = (...args) => {
     pushState.apply(history, args)
-    observe()
+    connect()
   }
 
   history.replaceState = (...args) => {
     replaceState.apply(history, args)
-    observe()
+    connect()
   }
 
-  observe()
+  connect()
 })

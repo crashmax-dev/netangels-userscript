@@ -1,6 +1,6 @@
 import { el } from 'redom'
 
-export function addDirectivesSpoiler(directives: NodeListOf<Element>): void {
+export function addSpoiler(directives: NodeListOf<Element>): void {
   for (const directive of directives) {
     if (directive.querySelector('spoiler')) return
 

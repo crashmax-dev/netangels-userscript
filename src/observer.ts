@@ -1,17 +1,22 @@
-export function wrapperObserver(callback: (mutation: MutationRecord) => void): () => void {
+export function wrapperObserver(
+  target: string, callback: (node: HTMLElement) => void
+) {
   const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
-      callback(mutation)
+      callback(mutation.target as HTMLElement)
     }
   })
 
-  return () => {
-    const app = document.querySelector('#app')
-    if (app) {
-      observer.observe(app, {
-        childList: true,
-        subtree: true
-      })
-    }
+  return {
+    connect: () => {
+      const el = document.querySelector(target)
+      if (el) {
+        observer.observe(el, {
+          childList: true,
+          subtree: true
+        })
+      }
+    },
+    disconnect: () => observer.disconnect()
   }
 }
