@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        netangels-userscript
-// @version     1.1.1
+// @version     1.1.2
 // @author      Vitalij Ryndin
 // @description netangels-userscript
 // @homepage    https://crashmax-dev.github.io/netangels-userscript/
