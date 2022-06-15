@@ -1,12 +1,16 @@
 .spoiler {
   filter: blur(6px);
-  transition: filter .5s ease-in;
+  transition: filter 0.5s ease-in;
 }
 
 .spoiler:hover {
   filter: none;
 }
 
-.virtualhost_dbms-access__info {
-  @extend .spoiler
+.tag-wrapper,
+.virtualhost_dbms-access__info,
+.ac-mobile-change-phone__phone,
+.ui-kit-form-input__input,
+.ac-documentation-use__code {
+  @extend .spoiler;
 }
