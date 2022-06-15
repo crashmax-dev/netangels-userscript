@@ -15,18 +15,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strictPropertyInitialization": false,
-    "rootDir": "src",
+    "baseUrl": "src",
     "outDir": "dist"
-  },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "public"
-  ],
-  "include": [
-    "src/**/*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js"
-  ]
+  }
 }
