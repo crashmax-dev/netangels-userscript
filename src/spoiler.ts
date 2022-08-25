@@ -6,7 +6,7 @@ export function addSpoiler(directives: NodeListOf<Element>): void {
 
     const span = directive.querySelector('span')!
     const [, key, value] = span.textContent!.match(/(.+)=(.+)/)!
-    const spoiler = el('span', { className: 'spoiler' }, value)
+    const spoiler = el('span', { className: 'spoiler' }, value!)
     span.innerHTML = `${key}=${spoiler.outerHTML}`
   }
 }
