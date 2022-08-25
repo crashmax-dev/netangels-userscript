@@ -1,6 +1,6 @@
-import { wrapperObserver } from './observer'
-import { addSpoiler } from './spoiler'
-import './styles.scss'
+import { wrapperObserver } from './observer.js'
+import { addSpoiler } from './spoiler.js'
+import './style.scss'
 
 window.addEventListener('load', () => {
   const { connect, disconnect } = wrapperObserver('#app', (node) => {

@@ -5,8 +5,9 @@ export function addSpoiler(directives: NodeListOf<Element>): void {
     if (directive.querySelector('spoiler')) return
 
     const span = directive.querySelector('span')!
+    // prettier-ignore
     const [, key, value] = span.textContent!.match(/(.+)=(.+)/)!
-    const spoiler = el('span', { className: 'spoiler' }, value)
+    const spoiler = el('span', { className: 'spoiler' }, value!)
     span.innerHTML = `${key}=${spoiler.outerHTML}`
   }
 }

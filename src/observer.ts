@@ -1,5 +1,6 @@
 export function wrapperObserver(
-  target: string, callback: (node: HTMLElement) => void
+  target: string,
+  callback: (node: HTMLElement) => void
 ) {
   const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
