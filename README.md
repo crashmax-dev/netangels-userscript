@@ -1,9 +1,6 @@
-# 🚀 Webpack userscript template
+# netangels-userscript
 
-![TypeScript](https://img.shields.io/badge/TypeScript-informational?style=flat-square&logo=typescript&logoColor=ffffff&color=007acc)
-![WebPack](https://img.shields.io/badge/Webpack-informational?style=flat-square&logo=webpack&logoColor=ffffff&color=1c78c0)
-
-> This template is based on [Webpack](https://github.com/webpack/webpack) and [webpack-userscript](https://github.com/momocow/webpack-userscript), written in [TypeScript](https://github.com/microsoft/TypeScript).
+> This template is based on [Vite](https://vitejs.dev) and [vite-userscript-plugin](https://github.com/crashmax-dev/vite-userscript-plugin).
 
 ## Usage
 
@@ -30,6 +27,6 @@
 
 * Navigate to `chrome://flags/#allow-insecure-localhost`, enable insecure localhost
 * Navigate to `chrome://extensions/?id=dhdgffkkebhmkfjojejmpbldmpobfkfo` (Chrome manage extensions page of `Tampermonkey`) and enable `Allow access to file URLs` (you need to manual reload page when dev userscript, see [#475](https://github.com/Tampermonkey/tampermonkey/issues/475#issuecomment-348594785) for more detail)
-* `npm install`
-* `npm run dev`
-* Open `https://localhost:8080/netangels-userscript.proxy.user.js` in browser (click Advanced -> proceed if it shows a security warning) to install the proxy script.
+* `pnpm install`
+* `pnpm dev`
+* After it starts up, it open browser for install the proxy script.

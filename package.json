@@ -23,11 +23,11 @@
     "@crashmax/prettier-config": "^2.0.3",
     "@crashmax/tsconfig": "^1.0.2",
     "@types/tampermonkey": "^4.0.5",
-    "sass": "^1.54.5",
-    "vite": "^3.0.9",
-    "vite-userscript-plugin": "^1.1.0"
+    "sass": "^1.54.8",
+    "vite": "^3.1.0",
+    "vite-userscript-plugin": "^1.2.0"
   },
   "dependencies": {
-    "redom": "^3.29.0"
+    "redom": "^3.29.1"
   }
 }

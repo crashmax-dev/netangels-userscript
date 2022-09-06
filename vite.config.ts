@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import Userscript from 'vite-userscript-plugin'
-import { author, name, version } from './package.json'
+import { author, homepage, name, version } from './package.json'
 
 export default defineConfig({
   plugins: [
@@ -9,6 +9,7 @@ export default defineConfig({
       header: {
         name,
         version,
+        homepage,
         author: author.name,
         match: 'https://panel.netangels.ru/*'
       }
